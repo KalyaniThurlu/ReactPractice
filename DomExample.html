@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="one">
+        <button id="two">hello</button>
+    </div>
+
+    <script>
+        let id = document.getElementById("one");
+        let button = document.getElementById("two");
+
+        function handling() {
+            id.addEventListener("click", function() {
+             
+            
+                button.textContent = "wellcome";
+            });
+        }
+
+        handling();
+        var a=10
+        function exHoisting(){
+            var b=20
+            console.log(b)
+        }
+        exHoisting()
+        console.log(a)
+    </script>
+</body>
+</html>
+
+<!-- 
+What is Hoisting in javascript?
+// 30. What are HTML5 features?
+// 31. What is BOX Model?
+// 32. What is difference between Flexbox and Grid?
+// 33. What are different types are selectors are available?
+// 34. What is difference between  val ,let and const?
+// 35. What is Promise? What are different types of stages of it?
+// 36. What is difference between axios and fetch? -->
