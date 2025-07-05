@@ -1,141 +1,110 @@
-function nums() {
-  let num = [1, 2, 3, 4, 5];
-  console.log(num);
-}
-nums();
-
-const num1 = [6, 7, 8, 9, 10];
-console.log(num1);
-
-function defaultParam(name = "default") {
-  let exname = `hello${name}`;
-  console.log(exname);
-}
-
-defaultParam("latha");
-const Exarrow = () => {
-  return "wellcome";
-};
-console.log(Exarrow());
-let num2 = [1, 2, 3, 4, 5];
-let num3 = [6, 7, 8, 9, 10];
-let result = [...num2, ...num3];
-console.log(result);
-
-let [a, ...rest] = [2, 3, 4, 5, 6, 7, 8, 9];
-console.log(a);
-console.log(rest);
-let obj = {
-  name: "latha",
-  id: 2,
-  price: 2000,
-  age: 30,
-};
-const { name, id, price, age } = obj;
-console.log(name);
-
-function extempletlitarates(name) {}
-
-function greet(name1, callback) {
-  console.log("hello" + name1);
-  callback();
-}
-function sayBoy() {
-  console.log("goodboy");
-}
-greet("latha", sayBoy);
-
-function multiplay(factor) {
-  return function (number) {
-    return factor * number;
-  };
-}
-let duble = multiplay(2);
-let triple = multiplay(2);
-console.log(duble(3));
-console.log(triple(2));
-
-function withParam(a, b) {
-  return a + b;
-}
-let results = withParam(2, 3);
-console.log(results);
-
-function withOutParam() {
-  return "hello";
-}
-console.log(withOutParam());
-
-function withReturn() {
-  return "wellcome";
-}
-console.log(withReturn());
-
-function withOutReturn() {
-  console.log("this is Regular Function");
-}
-withOutReturn();
-
-const exArrowfun = (c, d) => {
-  return c * d;
-};
-let rst = exArrowfun(2, 3);
-console.log(rst);
-
-function findMissingNum(arr, n) {
-  let totelNum = (n * (n + 1)) / 2;
-  let expectedNum = arr.reduce((sum, num) => sum + num, 0);
-  return totelNum - expectedNum;
-}
-let arr = [1, 2, 4, 5];
-let n = 5;
-console.log(findMissingNum(arr, n));
-
-function exReverserd(str) {
-  let results = "";
-  for (let i = str.length - 1; i >= 0; i--) {
-    results += str[i];
+const people = [
+  {
+    id: 2345,
+    name: "latha",
+    Address: {
+      village: "addressvillage",
+      mandal: "adressmandal",
+    },
+  },
+  {
+    id: 3321,
+    name: "rama",
+    Address1: {
+      village: "address1village",
+      mandal: "adress1mandal",
+    },
+  },
+  {
+    id: 5543,
+    name: "suma",
+    Address2: {
+      village: "address2village",
+      mandal: "adress2mandal",
+    },
+  },
+  {
+    id: 665,
+    name: "padhma",
+    Address3: {
+      village: "address3village",
+      mandal: "adress3mandal",
+    },
+  },
+];
+const exPeople = [];
+for (let i = 0; i < people.length; i++) {
+  if (people[i].id > 2000) {
+    exPeople.push(people[i].id);
   }
-  return results;
 }
-console.log(exReverserd("hello"));
+console.log(exPeople);
+// const exPeople=people.find((e)=>e.id==665)
+// console.log(exPeople)
 
-let numbers = [1, 2, 3, 4, 5, 1, 3, 2];
-function findDuplicateNums(numbers) {
-  return numbers.filter((num, index) => numbers.indexOf(num) !== index);
-}
-console.log(findDuplicateNums(numbers));
+const products = [
+  {
+    id: 1,
+    title: "Essence Mascara Lash Princess",
+    description:
+      "The Essence Mascara Lash Princess is a popular mascara known for its volumizing and lengthening effects. Achieve dramatic lashes with this long-lasting and cruelty-free formula.",
+    category: "beauty",
+    price: 9.99,
+    discountPercentage: 7.17,
+    rating: 4.94,
+    stock: 5,
+    tags: ["beauty", "mascara"],
+    brand: "Essence",
+    sku: "RCH45Q1A",
+    weight: 2,
+    dimensions: {
+      width: 23.17,
+      height: 14.43,
+      depth: 28.01,
+    },
+    warrantyInformation: "1 month warranty",
+    shippingInformation: "Ships in 1 month",
+    availabilityStatus: "Low Stock",
+    reviews: [
+      {
+        rating: 2,
+        comment: "Very unhappy with my purchase!",
+        date: "2020-05-23T08:56:21.618Z",
+        reviewerName: "John Doe",
+        reviewerEmail: "john.doe@x.dummyjson.com",
+      },
+      {
+        rating: 2,
+        comment: "Not as described!",
+        date: "2022-05-23T08:56:21.618Z",
+        reviewerName: "Nolan Gonzalez",
+        reviewerEmail: "nolan.gonzalez@x.dummyjson.com",
+      },
+      {
+        rating: 5,
+        comment: "Very satisfied!",
+        date: "2024-05-23T08:56:21.618Z",
+        reviewerName: "Scarlett Wright",
+        reviewerEmail: "scarlett.wright@x.dummyjson.com",
+      },
+    ],
+  },
+];
 
-function exCounter() {
-  let count = 0;
-  return function () {
-    count++;
-    return count;
-  };
-}
-let incresed = exCounter(1);
-console.log(incresed());
-console.log(incresed());
-console.log(incresed());
-console.log(incresed());
+const exproducts = products[0].reviews.find((e) => {
+  reviewdate = new Date(e.date).getFullYear();
+  return reviewdate == 2024;
+});
+console.log(exproducts);
 
-function applyFunction(arr1, fn) {
-  return arr1.map(fn);
-}
-function plusOne(n) {
-  return n + 1;
-}
-let arr1 = [4, 5, 6];
-console.log(applyFunction(arr1, plusOne));
+// const exproducts = [];
+// for (let i = 0; i < products.length; i++) {
+//   for (let j = 0; j < products[i].reviews.length; j++) {
+//     if (products[i].reviews[j].reviewerName) {
+//       exproducts.push(products[i].reviews[j].reviewerName);
+//     }
+//   }
+// }
+// console.log(exproducts);
 
 
-
-
-function greaterThan10(arr2, fn) {
-  return arr2.filter(fn);
-}
-function filteredArr(n) {
-  return n > 10;
-}
-let arr2 = [3, 4, 5, 6, 12, 13, 34, 56];
-console.log(greaterThan10(arr2, filteredArr));
